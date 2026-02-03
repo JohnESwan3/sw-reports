@@ -1,6 +1,9 @@
 mod app;
+mod charts;
+mod data;
 mod importing;
 mod message;
+mod reports;
 mod screens;
 mod theme;
 

@@ -257,7 +257,7 @@ pub async fn apply_duplicate_decision(
     }
 }
 
-async fn open_pool(db_path: &Path) -> Result<SqlitePool, String> {
+pub async fn open_pool(db_path: &Path) -> Result<SqlitePool, String> {
     if let Some(parent) = db_path.parent() {
         fs::create_dir_all(parent)
             .await
@@ -275,7 +275,7 @@ async fn open_pool(db_path: &Path) -> Result<SqlitePool, String> {
         .map_err(|err| format!("Failed to connect to database: {err}"))
 }
 
-async fn ensure_schema(pool: &SqlitePool) -> Result<(), String> {
+pub async fn ensure_schema(pool: &SqlitePool) -> Result<(), String> {
     sqlx::query(
         r#"
         CREATE TABLE IF NOT EXISTS new_hire_metrics (
