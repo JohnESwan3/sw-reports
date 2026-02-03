@@ -7,7 +7,7 @@ pub fn view<'a>(_collapsed: bool) -> Element<'a, Message> {
     container(
         column![
             text("Reports").size(28),
-            text("Coming Soon")
+            text("Coming Soon").size(16)
         ]
         .spacing(12),
     )
